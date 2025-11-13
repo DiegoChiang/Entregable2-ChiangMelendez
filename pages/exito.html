@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>¡Pedido confirmado! — Las Trufas de Andrea</title>
+
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="icon" href="../assets/img/favicon.png" />
+
+  <script src="../js/storage.js" defer></script>
+  <script src="../js/exito.js" defer></script>
+</head>
+<body>
+  <main class="container success">
+    <img class="brand-lg" src="../assets/img/logo-principal.png" alt="Las Trufas de Andrea" />
+    <h1>¡Gracias por tu compra!</h1>
+    <p>Tu pedido <strong id="order-id">—</strong> ha sido registrado correctamente.</p>
+
+    <section class="success-details">
+      <h2>Resumen</h2>
+      <ul class="key-values">
+        <li><span>Total pagado</span><strong id="ok-total">S/ 0.00</strong></li>
+        <li><span>Entrega</span><strong id="ok-entrega">—</strong></li>
+        <li><span>Dirección</span><strong id="ok-direccion">—</strong></li>
+      </ul>
+      <table class="cart-table small">
+        <thead>
+          <tr><th>Producto</th><th>Pres.</th><th>Cant.</th><th>Subt.</th></tr>
+        </thead>
+        <tbody id="ok-items"></tbody>
+      </table>
+    </section>
+
+    <div class="actions">
+      <a href="../index.html" class="btn btn-primary">Seguir comprando</a>
+      <a href="carrito.html" class="btn btn-outline">Ver carrito</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Las Trufas de Andrea</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Las Trufas de Andrea — Catálogo</title>
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="assets/img/favicon.png" />
+
+  <script src="data/data.js" defer></script>
+  <script src="js/storage.js" defer></script>
+  <script src="js/catalogo.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="Inicio">
+        <img src="assets/img/logo-principal.png" alt="Las Trufas de Andrea" />
+      </a>
+      <ul class="menu">
+        <li><a href="index.html" class="active">Catálogo</a></li>
+        <li>
+          <a href="pages/carrito.html" class="cart-link" aria-label="Ir al carrito">
+            Carrito <span id="cart-count" class="badge" aria-live="polite">0</span>
+          </a>
+        </li>
+      </ul>
+      <form class="search" role="search" aria-label="Buscar productos">
+        <input id="search-input" type="search" placeholder="Buscar sabor…" autocomplete="off" />
+        <button id="search-clear" type="button" aria-label="Limpiar búsqueda">×</button>
+      </form>
+    </nav>
+
+    <section class="hero">
+      <img src="assets/img/hero-trufas.jpg" alt="Trufas artesanales en bandeja" />
+    </section>
+
+    <div class="tabs" role="tablist" aria-label="Categorías">
+      <button class="tab active" data-filter="todas" role="tab" aria-selected="true">Todas</button>
+      <button class="tab" data-filter="clasicas" role="tab">Clásicas</button>
+      <button class="tab" data-filter="especiales" role="tab">Especiales</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="cards-container" class="grid" aria-live="polite" aria-busy="false"></section>
+    <section id="empty-state" class="empty" hidden>
+      <p>No encontramos resultados. Prueba otro término o categoría.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Las Trufas de Andrea •
+      <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></p>
+  </footer>
+</body>
+</html>
