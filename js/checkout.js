@@ -120,7 +120,6 @@ form.addEventListener("submit", (ev) => {
 
   const tipo = radioDelivery.checked ? "delivery" : "recojo";
 
-  // limpiar errores anteriores
   clearFieldError(dirCalle);
   clearFieldError(dirDistrito);
 
@@ -129,7 +128,6 @@ form.addEventListener("submit", (ev) => {
     const dis = (dirDistrito.value || "").trim();
     let hasError = false;
 
-    // Primero validamos distrito (para que se resalte su casilla cuando está mal)
     if (dis.length < 3) {
       setFieldError(
         dirDistrito,
@@ -141,7 +139,6 @@ form.addEventListener("submit", (ev) => {
       hasError = true;
     }
 
-    // Luego validamos dirección
     if (dir.length < 5) {
       setFieldError(
         dirCalle,
@@ -205,3 +202,4 @@ form.addEventListener("submit", (ev) => {
   if (prefs?.distrito) dirDistrito.value = prefs.distrito;
   applyEntregaUI();
 })();
+
