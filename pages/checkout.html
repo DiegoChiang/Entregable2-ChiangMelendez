@@ -1,87 +1,134 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Checkout — Las Trufas de Andrea</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Checkout — Las Trufas de Andrea</title>
 
-  <link rel="stylesheet" href="../css/styles.css" />
-  <link rel="icon" href="../assets/img/favicon.png" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="icon" href="../assets/img/favicon.png" />
 
-  <script src="../data/data.js" defer></script>
-  <script src="../js/storage.js" defer></script>
-  <script src="../js/checkout.js" defer></script>
-</head>
-<body>
-  <header class="site-header simple">
-    <nav class="nav">
-      <a class="brand" href="../index.html" aria-label="Volver al catálogo">
-        <img src="../assets/img/logo-principal.png" alt="Las Trufas de Andrea" />
-      </a>
-      <ul class="menu">
-        <li><a href="carrito.html">Carrito</a></li>
-      </ul>
-    </nav>
-  </header>
+    <script src="../data/data.js" defer></script>
+    <script src="../js/storage.js" defer></script>
+    <script src="../js/checkout.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header simple">
+      <nav class="nav">
+        <a class="brand" href="../index.html" aria-label="Volver al catálogo">
+          <img
+            src="../assets/img/logo-principal.png"
+            alt="Las Trufas de Andrea"
+          />
+        </a>
+        <ul class="menu">
+          <li><a href="carrito.html">Carrito</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <main class="container checkout-grid">
-    <section class="checkout-form">
-      <h1>Finalizar compra</h1>
+    <main class="container checkout-grid">
+      <section class="checkout-form">
+        <h1>Finalizar compra</h1>
 
-      <form id="checkout-form" novalidate>
-        <fieldset>
-          <legend>Tipo de entrega</legend>
-          <label class="radio">
-            <input type="radio" name="entrega" value="recojo" id="entrega-recojo" checked />
-            Recojo en local (S/ 0)
-          </label>
-          <label class="radio">
-            <input type="radio" name="entrega" value="delivery" id="entrega-delivery" />
-            Delivery (S/ 8)
-          </label>
-        </fieldset>
+        <form id="checkout-form" novalidate>
+          <fieldset>
+            <legend>Tipo de entrega</legend>
+            <label class="radio">
+              <input
+                type="radio"
+                name="entrega"
+                value="recojo"
+                id="entrega-recojo"
+                checked
+              />
+              Recojo en local (S/ 0)
+            </label>
+            <label class="radio">
+              <input
+                type="radio"
+                name="entrega"
+                value="delivery"
+                id="entrega-delivery"
+              />
+              Delivery (S/ 8)
+            </label>
+          </fieldset>
 
-        <div id="delivery-fields" class="stack" hidden>
-          <label>
-            Dirección
-            <input id="dir-calle" name="direccion" type="text" minlength="5" maxlength="80" autocomplete="street-address" />
-          </label>
-          <label>
-            Distrito
-            <input id="dir-distrito" name="distrito" type="text" minlength="3" maxlength="40" />
-          </label>
+          <div id="delivery-fields" class="stack" hidden>
+            <label>
+              Dirección
+              <input
+                id="dir-calle"
+                name="direccion"
+                type="text"
+                minlength="5"
+                maxlength="80"
+                autocomplete="street-address"
+              />
+            </label>
+            <label>
+              Distrito
+              <input
+                id="dir-distrito"
+                name="distrito"
+                type="text"
+                minlength="3"
+                maxlength="40"
+              />
+            </label>
+          </div>
+          <br />
+          <fieldset>
+            <legend>Medio de pago</legend>
+            <label class="radio"
+              ><input type="radio" name="pago" value="efectivo" checked />
+              Efectivo</label
+            >
+            <label class="radio"
+              ><input type="radio" name="pago" value="yape" /> Yape/Plin</label
+            >
+          </fieldset>
+
+          <button type="submit" class="btn btn-primary">
+            Confirmar pedido
+          </button>
+        </form>
+      </section>
+
+      <aside class="checkout-summary">
+        <h2>Resumen</h2>
+        <table class="cart-table small">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Pres.</th>
+              <th>Cant.</th>
+              <th>Subt.</th>
+            </tr>
+          </thead>
+          <tbody id="resume-items"></tbody>
+        </table>
+
+        <div class="summary">
+          <div class="row">
+            <span>Subtotal</span><strong id="resume-subtotal">S/ 0.00</strong>
+          </div>
+          <div class="row">
+            <span>Descuento</span><strong id="resume-descuento">S/ 0.00</strong>
+          </div>
+          <div class="row">
+            <span>Envío</span><strong id="resume-envio">S/ 0.00</strong>
+          </div>
+          <div class="row total">
+            <span>Total</span><strong id="resume-total">S/ 0.00</strong>
+          </div>
         </div>
+      </aside>
+    </main>
 
-        <fieldset>
-          <legend>Medio de pago</legend>
-          <label class="radio"><input type="radio" name="pago" value="efectivo" checked /> Efectivo</label>
-          <label class="radio"><input type="radio" name="pago" value="yape" /> Yape/Plin</label>
-        </fieldset>
-
-        <button type="submit" class="btn btn-primary">Confirmar pedido</button>
-      </form>
-    </section>
-
-    <aside class="checkout-summary">
-      <h2>Resumen</h2>
-      <table class="cart-table small">
-        <thead>
-          <tr><th>Producto</th><th>Pres.</th><th>Cant.</th><th>Subt.</th></tr>
-        </thead>
-        <tbody id="resume-items"></tbody>
-      </table>
-
-      <div class="summary">
-        <div class="row"><span>Subtotal</span><strong id="resume-subtotal">S/ 0.00</strong></div>
-        <div class="row"><span>Descuento</span><strong id="resume-descuento">S/ 0.00</strong></div>
-        <div class="row"><span>Envío</span><strong id="resume-envio">S/ 0.00</strong></div>
-        <div class="row total"><span>Total</span><strong id="resume-total">S/ 0.00</strong></div>
-      </div>
-    </aside>
-  </main>
-
-  <footer class="site-footer">
-    <p>© <span id="year"></span> Las Trufas de Andrea</p>
-  </footer>
-</body>
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Las Trufas de Andrea</p>
+    </footer>
+  </body>
 </html>

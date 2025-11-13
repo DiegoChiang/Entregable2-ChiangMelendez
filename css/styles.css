@@ -445,7 +445,7 @@ input:focus {
 }
 
 #dir-distrito{
-  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 
@@ -511,6 +511,19 @@ legend {
 .checkout-summary .summary {
   margin-top: 12px;
 }
+
+.input-error {
+  border-color: #e07a7a;
+  box-shadow: 0 0 0 3px rgba(224, 122, 122, 0.35);
+}
+
+.field-error {
+  display: block;
+  margin-top: 4px;
+  color: #c0392b;
+  font-size: 0.85rem;
+}
+
 
 /* =========================
    Éxito
