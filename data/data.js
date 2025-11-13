@@ -2,7 +2,6 @@ const PRESENTACIONES = [4, 10, 20];
 const MONEDA = "S/";
 
 const CATALOGO = [
-  // Clásicas
   {
     id: "vainilla",
     nombre: "Vainilla",
@@ -32,7 +31,6 @@ const CATALOGO = [
     precios: { 4: 10, 10: 25, 20: 50 }
   },
 
-  // Especiales (todos con 12 / 30 / 60)
   {
     id: "nutella",
     nombre: "Nutella",
@@ -96,4 +94,5 @@ const CATALOGO = [
     imagen: "assets/img/trufas/chocolate-almendras.jpg",
     precios: { 4: 12, 10: 30, 20: 60 }
   }
+
 ];
